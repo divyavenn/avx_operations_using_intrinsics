@@ -21,7 +21,9 @@
 
 // TODO: Implement this function
 void print__m256(__m256 data){
-	//
+	float* f = (float*)&data;
+	printf("%f %f %f %f %f %f %f %f \n",
+		f[7], f[6], f[5], f[4], f[3], f[2], f[1], f[0]);
 	// Your implementation can be done in 2 lines
 	//
 }
@@ -35,61 +37,16 @@ int main(){
 	printf("=========Printing evens=========\n\n");
 	print__m256(evensAVX);
 
-
-	// Okay, now lets to experiment with a few commands to setup our data.
-	//
-	// TODO: Experiment with following commands below, and print out the values.
-	//	 If you do not know what the command does, look it up in the intrinsics guide.
-	//	 Intrinsics guide: https://software.intel.com/sites/landingpage/IntrinsicsGuide/
-	// 
-	// _mm256_setzero_ps
-	// _mm256_set1_ps
-	//
-	// Your output should include a vector of all zeroes and a vector all with 42.00000.
-	
-	__m256 test1 = ...
-	__m256 test2 = ...
+	__m256 test1 = _mm256_setzero_ps();
+	__m256 test2 = _mm256_set1_ps(42.0);
 
 	printf("=========Printing 0's and 42's=========\n\n");
 	print__m256(test1);
 	print__m256(test2);
-
-	// The previous 'setzero' and 'set1' commands are nice ways to very quickly fill up a __m256 register.
-	// In C we have a command 'memset' which zeros out a number of bytes in an array.
-	// Sometimes however, we want to explicitly set individual values.
-	// In AVX2 we have the following intrinsic functions:
-	//
-	// _mm256_set_ps(0,...,7); 
-	// _mm256_setr_ps(7,...,0);
-	//
-	// Here is the actual signature for conveinience. Again, look in the intrinsics guide for exact syntax:
-	// __m256 _mm256_set_ps (float e7, float e6, float e5, float e4, float e3, float e2, float e1, float e0)
-	//
-	// Try to use each of these commands and print out the result.
-
-	test3 = ...
+	__m256 test3 = _mm256_setr_ps(7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.0);
 	
 	printf("=========Printing _mm256_set_ps=========\n\n");
 	print__m256(test3);
-
-	// Now why might we have a version of set and setr? (The 'r' at the end means reverse, referring to ordering of arguments)
-	// Intel machines are typically little-endian based architectures, this means order of our bits matters
-	// (Remember with our intrinsics, we are just playing around with a 'bucket of 256 bits' if that is helpful to think about.).
-	//
-	// Little-Endian means the least signficant value in the sequence is stored first.
-
-	// Okay, so we have spent some time setting data up. But often we
-	// work with data in which we load from memory. We have the ability to do so
-	// using the intrinsic functions.
-	//
-	// One concept that becomes important, is the idea of alignment in memory.
-	// That is, we need to make sure the memory address from which we load data
-	// is aligned on a 32-bit boundary.
-	//
-	// We have previously learned about malloc which does indeed load memory that
-	// is aligned, but typically in multiples of 8 or 16 bits. Let us make sure it is always in 
-	// 32 bits using aligned_malloc.
-	
 	float* aligned_32 = (float*)aligned_alloc(32, 8 * sizeof(float));
 
 	// Let's break that function down.
@@ -136,3 +93,4 @@ int main(){
 
 	return 0;
 }
+

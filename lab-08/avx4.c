@@ -21,12 +21,12 @@
 // print
 void print__m256(__m256 data){
 	float*f = (float*)&data;
-	printf("%f %f %f %f %f %f %f %f\n", f[0],f[1],f[2],f[3],f[4],f[5],f[6],f[7]);
+	printf("%f %f %f %f %f %f %f %f \n", f[0],f[1],f[2],f[3],f[4],f[5],f[6],f[7]);
 }
 
 void print__m256i(__m256i data){
-	// 2 lines here
-	//
+	int*f = (int*)&data;
+	printf("%i %i %i %i %i %i %i %i \n", f[0],f[1],f[2],f[3],f[4],f[5],f[6],f[7]);
 }
 
 int main(){
