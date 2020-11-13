@@ -12,16 +12,18 @@
 
 
 
-// print (Note, you may need to change this function or write another for your data)
-void print__m256(__m256 data){
-	float*f = (float*)&data;
-	printf("%f %f %f %f %f %f %f %f\n", f[0],f[1],f[2],f[3],f[4],f[5],f[6],f[7]);
-}
-void doTheThing(float i){
+//adds 1 to data and prints
+void do_the_thing(float i){
+	//Populate __m256 vector with array
 	__m256 data = _mm256_set1_ps(i);
+	//Populate __m256 vector with float 1
 	__m256 x = _mm256_set1_ps (1);
+	//Add both vectors to create one vector filled with target value
 	data =  _mm256_add_ps (x, data);
+	//Convert vector to array of floats
 	float* toPrint = (float*)&data;
+	//To access target value, extract any of the indexes in array
+	//print
 	printf("%i ", (int)(toPrint[0]));	
 }
 int main(){
@@ -31,11 +33,10 @@ int main(){
 		printf("Can't find file!");
 		exit(1);
 	}
-	int value;
 	float num;
 	while (fscanf(fp, "%f", &num) != EOF){
-		//Zhu L
-		doTheThing(num);
+		//ZHU LI!
+		do_the_thing(num);
 	}	
 	printf("\n");
 	return 0;
