@@ -4,7 +4,6 @@
 #include <string.h>
 
 
-// print (Note, you may need to change this function or write another for your data)
 void do_the_thing(int asc){
 	//import asci code to __m26i char format
 	__m256i data = _mm256_set1_epi8(asc);
