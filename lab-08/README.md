@@ -1,10 +1,10 @@
-# AVX Basic Operations
+# Implementing AVX Basic Operations Using Intrinsics
 
 <img align="right" src="./Media/ymm.png" width="300px" alt="ymm avx2 registers">
 
-The [advanced vector extensions](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) (AVX) are an instruction set for Intel (and AMD) machines that help us utilize the parallel processing(at the instruction level) capabilities of our modern [superscalar processor](https://en.wikipedia.org/wiki/Superscalar_processor). Today we are going to get some practice using a special instructions set! 
+The [advanced vector extensions](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) (AVX) are an instruction set for Intel (and AMD) machines that help utilize the parallel processing(at the instruction level) capabilities of our modern [superscalar processor](https://en.wikipedia.org/wiki/Superscalar_processor).
 
-Put simply, a superscalar processor allows us to take what we have previously learned with pipelining and now fetch, decode, and execute more than 1 instruction at a time. The image below shows an example. 
+Put simply, a superscalar processor allows fetching, decoding, and executing more than 1 instruction at a time. The image below shows an example. 
 
 <img align="center" src="./Media/Superscalarpipeline.PNG" width="500px" alt="ymm avx2 registers">
 
@@ -22,13 +22,12 @@ The instrinsic functions for our compiler (either gcc or clang) are located in a
 
 Navigating to `/lib/gcc/x86_64-redhat-linux/4.8.5/include/immintrin.h` you can actually see the contents of this file and where various intrinsic functions are implemented.
 
-For AVX2 specifically, you will see:
+The below code includes AVX specifically:
 ```c
 #ifdef __AVX2__
 #include <avx2intrin.h>
 #endif
 ```
-You may further navigate to [avx2intrin.h](https://github.com/gcc-mirror/gcc/blob/master/gcc/config/i386/avx2intrin.h) and investigate the contents. Note, you will see within this header a message about whether or not it is okay to directly `#include <avx2intrin.h>`. :)
 
 * [avx1.c](./avx1.c) - packs bytes into a basic instruction
 * [avx2.c](./avx2.c) - a print debugging function 
