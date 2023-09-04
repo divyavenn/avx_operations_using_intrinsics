@@ -30,42 +30,30 @@ For AVX2 specifically, you will see:
 ```
 You may further navigate to [avx2intrin.h](https://github.com/gcc-mirror/gcc/blob/master/gcc/config/i386/avx2intrin.h) and investigate the contents. Note, you will see within this header a message about whether or not it is okay to directly `#include <avx2intrin.h>`. :)
 
-* [avx1.c](./avx1.c) - Uncover the basics of packing bytes into an instruction
-* [avx2.c](./avx2.c) - Build a print debugging function and learn about alignment.
-* [avx3.c](./avx3.c) - Arithmetic operations
-* [avx4.c](./avx4.c) - Understand masks
-* [avx5.c](./avx5.c) - Permuting and rearranging data with masks
+* [avx1.c](./avx1.c) - packs bytes into a basic instruction
+* [avx2.c](./avx2.c) - a print debugging function 
+* [avx3.c](./avx3.c) - implements arithmetic operations
+* [avx4.c](./avx4.c) - masking
+* [avx5.c](./avx5.c) - permutes and rearranges data with masks
+* [ex1.c](./ex1.c)   - reads in data from [data.txt](./data.txt) increments all of the values by 1 and prints them to the stdout on the terminal.
+* [ex2.c](./ex2.c)   - loads the data from [data2.txt](./data2.txt) implements a simple caeser shift decrypt then output the results as a char to stdout on the terminal.
 
-For each example, you will compile the code using: (e.g. `clang -std=c11 -mavx2 avx1.c -o avx1prog`) 
+Compile each source using the following:
+```c
+clang -std=c11 -mavx2 <src.c> -o <executable>
+```
 
 **Note** the `-mavx2` includes the avx2 functionality.
 
-## ex1.c
-Reads in data from a file called 'data.txt,' increment all of the values by 1 and print them to the stdout on the terminal.
-
-Compile this source using the following:
-```c
-clang -std=c11 -mavx2 ex1.c -o ex1prog
-```
-Run as normal with: 
-```c
-./ex1prog
-```
-
-## ex2.c
-
-Loads the data from data2.txt. Implement a simple caeser shift decrypt then output the results as a char to stdout on the terminal.
-Compile using
-```c
-clang -std=c11 -mavx2 ex2.c -o ex2prog
-```
 Run with:
 ```c
-./ex2prog
+./<executable>
 ```
 
-## Helpful References
+
+## Resources I used: 
 
 * Practical SIMD Programming: http://www.cs.uu.nl/docs/vakken/magr/2017-2018/files/SIMD%20Tutorial.pdf
 * Intel Intrinsics guide: https://software.intel.com/sites/landingpage/IntrinsicsGuide/
+* intrinsic functions: https://en.wikipedia.org/wiki/Intrinsic_function
 
