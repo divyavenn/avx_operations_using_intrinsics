@@ -1,12 +1,8 @@
 # Implementing AVX Basic Operations Using Intrinsics
 
-<img align="right" src="./Media/ymm.png" width="300px" alt="ymm avx2 registers">
-
 The [advanced vector extensions](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) (AVX) are an instruction set for Intel (and AMD) machines that help utilize the parallel processing(at the instruction level) capabilities of our modern [superscalar processor](https://en.wikipedia.org/wiki/Superscalar_processor).
 
-Put simply, a superscalar processor allows fetching, decoding, and executing more than 1 instruction at a time. The image below shows an example. 
-
-<img align="center" src="./Media/Superscalarpipeline.PNG" width="500px" alt="ymm avx2 registers">
+Put simply, a superscalar processor allows fetching, decoding, and executing more than 1 instruction at a time. 
 
 > Simple superscalar pipeline. By fetching and dispatching two instructions at a time, a maximum of two instructions per cycle can be completed. (IF = Instruction Fetch, ID = Instruction Decode, EX = Execute, MEM = Memory access, WB = Register write back, i = Instruction number, t = Clock cycle [i.e., time]) [[source](https://en.wikipedia.org/wiki/Superscalar_processor)]
 
