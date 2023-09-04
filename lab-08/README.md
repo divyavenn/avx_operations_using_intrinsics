@@ -41,6 +41,17 @@ For each example, you will compile the code using: (e.g. `clang -std=c11 -mavx2 
 **Note** the `-mavx2` includes the avx2 functionality.
 
 # ex1.c
+Reads in data from a file called 'data.txt,' increment all of the values by 1 and print them to the stdout on the terminal.
+
+Compile this source using the following:
+```c
+clang -std=c11 -mavx2 ex1.c -o ex1prog
+```
+Run as normal with: 
+```c
+./ex1prog
+```
+
 # ex2.c
 
 ## Helpful References
