@@ -40,7 +40,7 @@ For each example, you will compile the code using: (e.g. `clang -std=c11 -mavx2 
 
 **Note** the `-mavx2` includes the avx2 functionality.
 
-# ex1.c
+## ex1.c
 Reads in data from a file called 'data.txt,' increment all of the values by 1 and print them to the stdout on the terminal.
 
 Compile this source using the following:
@@ -52,7 +52,17 @@ Run as normal with:
 ./ex1prog
 ```
 
-# ex2.c
+## ex2.c
+
+Loads the data from data2.txt. Implement a simple caeser shift decrypt then output the results as a char to stdout on the terminal.
+Compile using
+```c
+clang -std=c11 -mavx2 ex2.c -o ex2prog
+```
+Run with:
+```c
+./ex2prog
+```
 
 ## Helpful References
 
