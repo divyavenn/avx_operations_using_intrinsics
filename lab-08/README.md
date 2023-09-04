@@ -1,4 +1,4 @@
-# Lab 8 - AVX2
+# AVX Basic Operations
 
 <img align="right" src="./Media/ymm.png" width="300px" alt="ymm avx2 registers">
 
@@ -30,13 +30,6 @@ For AVX2 specifically, you will see:
 ```
 You may further navigate to [avx2intrin.h](https://github.com/gcc-mirror/gcc/blob/master/gcc/config/i386/avx2intrin.h) and investigate the contents. Note, you will see within this header a message about whether or not it is okay to directly `#include <avx2intrin.h>`. :)
 
-
-## Part 2 - AVX2 Pratice
-
-Provided below is a listing of examples you should first work through. There are some questions and parts to fill in (i.e. some of the samples do not compile intentionally) to help you get some hands on experience with these commands.
-
-The following exercises provided are:
-
 * [avx1.c](./avx1.c) - Uncover the basics of packing bytes into an instruction
 * [avx2.c](./avx2.c) - Build a print debugging function and learn about alignment.
 * [avx3.c](./avx3.c) - Arithmetic operations
@@ -47,16 +40,8 @@ For each example, you will compile the code using: (e.g. `clang -std=c11 -mavx2 
 
 **Note** the `-mavx2` includes the avx2 functionality.
 
-## Part 3 - AVX2 Exercises
-
-By now you have had practice with the AVX2 instructions. Now attempt the following two exercises: [ex1.c](./ex1.c) and [ex2.c](./ex2.c).
-
-For each of the exercises, you will be working with text-based data files. In case you've forgotten how to load data from a file, here is a short [tutorial](https://www.tutorialspoint.com/cprogramming/c_file_io.htm).
-
-## Lab Deliverable
-
-1. Complete [ex1.c](./ex1.c) - Load data, add 1 to each piece of data and print it out.
-2. Complete [ex2.c](./ex2.c) - Decrypt a message (similiarly load data, add 1 to each value, but this time interpret as 'char' data)
+# ex1.c
+# ex2.c
 
 ## Helpful References
 
