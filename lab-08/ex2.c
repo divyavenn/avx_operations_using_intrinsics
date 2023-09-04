@@ -1,14 +1,4 @@
-// For this exercise, you are going to read in data from a file called 'data.txt'
-// Simple Caeser Shift decrypt
-// 
-// Load the data from data2.txt. Increment all of the values by 1 then output
-// the results as a char to stdout on the terminal.
-// 
-// You will compile this source using the following:
-// clang -std=c11 -mavx2 ex2.c -o ex2prog
-//
-// Run as normal with: 
-// ./ex2prog
+
 #include <stdio.h>
 #include <immintrin.h>
 #include <string.h>
