@@ -1,12 +1,4 @@
-// For this exercise, you are going to read in data from a file called 'data.txt'
-// Increment all of the values by 1 and print them to the stdout on the terminal.
-// 
-// You will compile this source using the following:
-// clang -std=c11 -mavx2 ex1.c -o ex1prog
-//
-// Run as normal with: 
-// ./ex1prog
-//
+
 #include <stdio.h>
 #include <immintrin.h>
 
